@@ -5,12 +5,17 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     @customer.update_attributes(served: true)
 
-    client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-    client.messages.create(
-      from: '+15617392754',
-      to: "+1#{@customer.phone_number}",
-      body: "Bzz!"
-    )
+    begin
+      client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+      client.messages.create(
+        from: '+15617392754',
+        to: "+1#{@customer.phone_number}",
+        body: "Bzz!"
+      )
+    rescue => e
+      logger.info "Twilio error:"
+      logger.info e.inspect
+    end
 
     respond_to do |format|
       format.js
@@ -23,20 +28,28 @@ class CustomersController < ApplicationController
     @customer.client_id = current_client.id
     @customer.save
 
-    client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
-    client.messages.create(
-      from: '+15617392754',
-      to: "+1#{@customer.phone_number}",
-      body: "You have been added to the line. There are #{current_amount_of_people_in_line} people ahead of you. You'll be buzzed 5 minutes before your turn."
-    )
+    begin
+      client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+      client.messages.create(
+        from: '+15617392754',
+        to: "+1#{@customer.phone_number}",
+        body: "You have been added to the line. There are #{current_amount_of_people_in_line} people ahead of you. You'll be buzzed 5 minutes before your turn."
+      )
+    rescue => e
+      logger.info "Twilio error:"
+      logger.info e.inspect
+    end
 
     respond_to do |format|
       format.js
     end
   end
 
+  private
+
   def customer_params
     params.require(:customer).permit(:phone_number, :name)
   end
+
 
 end

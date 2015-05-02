@@ -2,6 +2,6 @@
   <%= form_tag("/customers/#{customer.id}/buzz", method: :put, remote: true) do %>
     Name: <%= customer.name %>
     Phone Number: <%= customer.phone_number %>
-    <%= submit_tag "Buzz" %>
+    <%= submit_tag "Buzz", class: "btn btn-warning" %>
   <% end %>
 </div>

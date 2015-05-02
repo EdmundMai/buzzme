@@ -1,0 +1,4 @@
+$(".new-name-field").val('');
+$(".new-phone-number-field").val('');
+
+$(".existing-customers").append("<%=j render partial: 'customers/buzz_form', locals: {customer: @customer} %>")

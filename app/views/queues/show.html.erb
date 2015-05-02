@@ -1,0 +1,20 @@
+<h1>
+Queue for <%= current_client.email %>
+</h1>
+
+<div class="new-customers">
+<%= form_for @customer, remote: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, class: "new-name-field"  %><br />
+  <%= form.label :phone_number %>
+  <%= form.text_field :phone_number, class: "new-phone-number-field" %><br />
+  <%= form.submit "Add to line" %>
+<% end %>
+</div>
+
+<div class="existing-customers">
+<% @queue.each do |customer| %>
+  <%= render partial: 'customers/buzz_form', locals: {customer: customer}%>
+<% end %>
+</div>
+

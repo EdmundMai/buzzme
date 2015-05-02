@@ -5,4 +5,8 @@ class Client < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :customers
+
+  def customers_in_line
+    customers.where(served: [nil, false])
+  end
 end

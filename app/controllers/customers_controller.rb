@@ -1,9 +1,8 @@
 class CustomersController < ApplicationController
   before_action :authenticate_client!
 
-  def update
-    @customer = Customer.find(params[:id])
-    @customer.update_attributes(served: true)
+  def buzz
+    @customer = Customer.find(params[:customer_id])
 
     begin
       client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
@@ -16,6 +15,15 @@ class CustomersController < ApplicationController
       logger.info "Twilio error:"
       logger.info e.inspect
     end
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    @customer = Customer.find(params[:id])
+    @customer.update_attributes(served: true)
 
     respond_to do |format|
       format.js

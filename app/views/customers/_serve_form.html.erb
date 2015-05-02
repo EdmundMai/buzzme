@@ -1,0 +1,5 @@
+<%= form_tag("/customers/#{customer.id}", method: :put, remote: true) do %>
+  Name: <%= customer.name %>
+  Phone Number: <%= customer.phone_number %>
+  <%= submit_tag "Serve" %>
+<% end %>

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resource :queue
-  resources :customers, only: [:update, :create]
+  resources :customers, only: [:update, :create] do
+    put 'buzz'
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

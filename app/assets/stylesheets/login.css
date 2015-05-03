@@ -15,12 +15,12 @@
 }
 
 .login_background{
-	background-color: #18bc9c;
+	background-color: rgb(251,199,77);
 	height: 510px;
 }
 
 .sign_up_form{
-	background-color: #18bc9c;
+	background-color: rgb(251,199,77);
 	height: 510px;
 }
 
@@ -42,3 +42,4 @@ color: grey;
 	color: grey;
 	text-decoration: none;
 }
+

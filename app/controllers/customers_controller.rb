@@ -23,7 +23,9 @@ class CustomersController < ApplicationController
 
   def update
     @customer = Customer.find(params[:id])
-    @customer.update_attributes(served: true)
+    @customer.update_attributes(served: true, served_time: Time.now)
+
+    @average_wait_time = Customer.average_wait_time
 
     respond_to do |format|
       format.js

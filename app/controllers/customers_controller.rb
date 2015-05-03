@@ -14,9 +14,10 @@ class CustomersController < ApplicationController
 
   def buzz
     @customer = Customer.find(params[:customer_id])
-
+    account_sid = 'ACedd9df9b479477dcb98b3520a475089c'
+    auth_token = '7d3f51c5c50aec6cb12668c5efc107e4'
     begin
-      client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+      client = Twilio::REST::Client.new account_sid, auth_token
       client.messages.create(
         from: '+15617392754',
         to: "+1#{@customer.phone_number}",
@@ -52,9 +53,11 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     @customer.client_id = @client.id
     @customer.save
+    account_sid = 'ACedd9df9b479477dcb98b3520a475089c'
+    auth_token = '7d3f51c5c50aec6cb12668c5efc107e4'
 
     begin
-      client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+      client = Twilio::REST::Client.new account_sid, auth_token
       client.messages.create(
         from: '+15617392754',
         to: "+1#{@customer.phone_number}",

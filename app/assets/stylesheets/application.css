@@ -27,11 +27,8 @@
   margin-left: 50px;
 }
 .btn-buzz{
-  /*width: 500px;*/
   float: right;
   margin-right: 50px;
-  background-color: #18bc9c;
-  border-color: #18bc9c;
 }
 .btn-buzz:hover{
   background-color: #18bc9c;
@@ -41,4 +38,8 @@
   height: 50px;
   margin: 20px;
   font-size: 1.5em;
+}
+.btn-save{
+  float: right;
+  margin-right: 50px;
 }

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :clients  # The priority is based upon order of creation: first created -> highest priority.
+  devise_for :clients, :controllers => {:registrations => "registrations", :sessions => "sessions"}  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :customers, only: [:update, :create] do
     put 'buzz'
     get 'remove'
+    post "post_create"
+    post 'post_update'
+    post "post_buzz"
+    post 'post_remove'
   end
 
   # Example of regular route:

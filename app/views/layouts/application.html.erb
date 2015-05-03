@@ -34,9 +34,16 @@
           </li>
           <li class="page-scroll">
             <% if current_client %>
+            <li>
+            <a href="/queue">My Queue</a>
+            </li>
+            <li>
               <%= link_to "Log Out", destroy_client_session_path, method: :delete %>
+              </li>
             <% else %>
+            <li>
               <%= link_to "Log In", new_client_session_path %>
+              </li>
             <% end %>
           </li>
         </ul>

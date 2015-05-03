@@ -15,8 +15,9 @@
 
     <div class="new-customers">
       <%= form_for @customer, remote: true do |form| %>
-      <i class="fa fa-camera-retro"></i>
+      <i class="img-font fa fa-user-plus fa-4x"></i>
         <%= form.text_field :name, class: "new-name-field", placeholder: 'Name'  %><br />
+      <i class="img-font fa fa-phone fa-4x"></i>
         <%= form.text_field :phone_number, class: "new-phone-number-field", placeholder: 'Phone' %><br />
         <%= form.submit "Add to line", class: "btn btn-primary" %>
       <% end %>

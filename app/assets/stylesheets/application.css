@@ -43,3 +43,7 @@
   float: right;
   margin-right: 50px;
 }
+.img-font{
+  position: relative;
+  top: 10px;
+}

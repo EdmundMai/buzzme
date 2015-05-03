@@ -21,6 +21,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'twilio-ruby', '~> 4.0.0'
 
 gem 'bcrypt'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 gem "twitter-bootstrap-rails"
 # Use jquery as the JavaScript library

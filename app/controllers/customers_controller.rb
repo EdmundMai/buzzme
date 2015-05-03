@@ -7,6 +7,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+      format.json { render json: @customer, status: :accepted }
     end
   end
 
@@ -28,6 +29,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+      format.json { render json: @customer, status: :accepted }
     end
   end
 
@@ -40,6 +42,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+      format.json { render json: @customer, status: :accepted }
     end
   end
   def create
@@ -64,6 +67,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+      format.json { render json: @customer, status: :accepted }
     end
   end
 

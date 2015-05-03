@@ -6,7 +6,7 @@ class Customer < ActiveRecord::Base
     where("served_time IS NOT NULL").each do |customer|
       total_wait_time = customer.served_time - customer.created_at + total_wait_time
     end
-    total_wait_time / 60.0 / self.count
+    total_wait_time / 60.0 / (self.count.zero? ? 1 : self.count)
   end
 
 end

@@ -7,6 +7,6 @@ class Client < ActiveRecord::Base
   has_many :customers
 
   def customers_in_line
-    customers.where(served: [nil, false])
+    customers.where(served: [nil, false], cancelled: [nil, false])
   end
 end

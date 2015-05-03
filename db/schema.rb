@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503002953) do
+ActiveRecord::Schema.define(version: 20150503013805) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150503002953) do
     t.datetime "updated_at",   null: false
     t.boolean  "served"
     t.datetime "served_time"
+    t.boolean  "cancelled"
   end
 
 end

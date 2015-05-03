@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resource :queue
   resources :customers, only: [:update, :create] do
     put 'buzz'
+    get 'remove'
   end
 
   # Example of regular route:

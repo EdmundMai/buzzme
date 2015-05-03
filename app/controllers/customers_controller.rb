@@ -1,6 +1,14 @@
 class CustomersController < ApplicationController
   before_action :authenticate_client!
 
+  def remove
+    @customer = Customer.find(params[:customer_id])
+    @customer.update_attributes(cancelled: true)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def buzz
     @customer = Customer.find(params[:customer_id])
 

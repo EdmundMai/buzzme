@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_action :set_client
 
+
   def remove
     @customer = Customer.find(params[:customer_id])
     @customer.update_attributes(cancelled: true)
@@ -37,7 +38,8 @@ class CustomersController < ApplicationController
   end
 
   def update
-    @customer = Customer.find(params[:id])
+    id = params[:customer_id] || params[:id]
+    @customer = Customer.find(id)
     @customer.update_attributes(served: true, served_time: Time.now)
     @current_amount_of_people_in_line = @client.customers_in_line.count
 
@@ -75,6 +77,10 @@ class CustomersController < ApplicationController
       format.js
       format.json { render json: @customer, status: :accepted }
     end
+  end
+
+  ['remove', 'buzz', 'create', 'update'].each do |method_name|
+    alias_method "post_#{method_name}", method_name
   end
 
   private

@@ -27,3 +27,18 @@
 .sign_up_form .actions{
 	margin-top: 10px;
 }
+
+.beepng{
+	height: 30px;
+	margin-left: 5px;
+}
+
+.headerwords{
+font-size: 2em;
+color: grey;
+}
+
+.headerwords:hover {
+	color: grey;
+	text-decoration: none;
+}

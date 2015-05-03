@@ -63,6 +63,11 @@
   border-radius: 50%
 }
 .average-wait-time{
-  font-size: 5em;
+  font-size: 3em;
   color: white;
+  margin-top: 20px;
+}
+.clock{
+  font-size: 0.5em !important;
+  margin-right: 5px;
 }

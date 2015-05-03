@@ -9,7 +9,7 @@
         Queue for <%= current_client.email %>
     </h1>
     <div class= 'row'>
-      <div class="col-lg-6 new-customers">
+      <div class="col-lg-8 new-customers">
         <%= form_for @customer, remote: true do |form| %>
         <i class="img-font fa fa-user-plus fa-4x"></i>
           <%= form.text_field :name, class: "new-name-field", placeholder: 'Name'  %><br />
@@ -19,8 +19,8 @@
         <% end %>
       </div>
 
-      <div class='col-lg-6 timer'>
-        <p class="average-wait-time"><i class="fa fa-clock-o"></i><%= @average_wait_time.to_i %></p>
+      <div class='col-lg-9 timer'>
+        <p class="average-wait-time"><i class="clock fa fa-clock-o"></i><%= @average_wait_time.to_i %></p>
       </div>
     </div>
 

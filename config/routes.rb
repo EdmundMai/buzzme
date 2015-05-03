@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resource :queue
+  resource :queue do
+    post "post_show"
+  end
   resources :customers, only: [:update, :create] do
     put 'buzz'
     get 'remove'

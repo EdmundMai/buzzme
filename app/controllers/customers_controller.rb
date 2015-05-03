@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
     begin
       client = Twilio::REST::Client.new account_sid, auth_token
       client.messages.create(
-        from: '+15617392754',
+        from: '+16466635445',
         to: "+1#{@customer.phone_number}",
         body: "Bzz!"
       )
@@ -64,7 +64,7 @@ class CustomersController < ApplicationController
     begin
       client = Twilio::REST::Client.new account_sid, auth_token
       client.messages.create(
-        from: '+15617392754',
+        from: '+16466635445',
         to: "+1#{@customer.phone_number}",
         body: "You have been added to the line. There are #{@current_amount_of_people_in_line} people ahead of you. You'll be buzzed 5 minutes before your turn."
       )

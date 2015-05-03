@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+  *= require font-awesome
  */
 
 .customer-entry-in-list{
@@ -36,5 +37,8 @@
   background-color: #18bc9c;
 }
 .new-phone-number-field , .new-name-field{
-
+  width: 400px;
+  height: 50px;
+  margin: 20px;
+  font-size: 1.5em;
 }

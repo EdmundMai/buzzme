@@ -6,5 +6,9 @@ class QueuesController < ApplicationController
     @customer = Customer.new
 
     @average_wait_time = Customer.average_wait_time
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end

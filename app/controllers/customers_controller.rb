@@ -5,6 +5,7 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:customer_id])
     @customer.update_attributes(cancelled: true)
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -25,6 +26,7 @@ class CustomersController < ApplicationController
     end
 
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -36,6 +38,7 @@ class CustomersController < ApplicationController
     @average_wait_time = Customer.average_wait_time
 
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -59,6 +62,7 @@ class CustomersController < ApplicationController
     end
 
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -68,6 +72,4 @@ class CustomersController < ApplicationController
   def customer_params
     params.require(:customer).permit(:phone_number, :name)
   end
-
-
 end

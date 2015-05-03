@@ -38,7 +38,11 @@
             <a href="#about">About</a>
           </li>
           <li class="page-scroll">
-            <%= link_to "Log In", new_client_session_path %>
+            <% if current_client %>
+              <%= link_to "Log Out", destroy_client_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Log In", new_client_session_path %>
+            <% end %>
           </li>
         </ul>
       </div>

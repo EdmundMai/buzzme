@@ -10,10 +10,8 @@
 
     <div class="new-customers">
       <%= form_for @customer, remote: true do |form| %>
-        <%= form.label :name %>
-        <%= form.text_field :name, class: "new-name-field"  %><br />
-        <%= form.label :phone_number %>
-        <%= form.text_field :phone_number, class: "new-phone-number-field" %><br />
+        <%= form.text_field :name, class: "new-name-field", placeholder: 'Name'  %><br />
+        <%= form.text_field :phone_number, class: "new-phone-number-field", placeholder: 'Phone' %><br />
         <%= form.submit "Add to line", class: "btn btn-primary" %>
       <% end %>
     </div>

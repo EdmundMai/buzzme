@@ -14,4 +14,27 @@
  *= require_self
  */
 
+.customer-entry-in-list{
+  padding: 10px;
+  margin: 10px;
+  background-color: #D3D6D4;
+  border-radius:15px;
+}
+.customer-info-in-list{
+  display: inline-block;
+  float: left;
+  margin-left: 50px;
+}
+.btn-buzz{
+  /*width: 500px;*/
+  float: right;
+  margin-right: 50px;
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+}
+.btn-buzz:hover{
+  background-color: #18bc9c;
+}
+.new-phone-number-field , .new-name-field{
 
+}

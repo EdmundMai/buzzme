@@ -1,7 +1,9 @@
-<div class="customer-<%= customer.id %>">
+<div class="customer-<%= customer.id %> customer-entry-in-list">
   <%= form_tag("/customers/#{customer.id}/buzz", method: :put, remote: true) do %>
-    Name: <%= customer.name %>
-    Phone Number: <%= customer.phone_number %>
-    <%= submit_tag "Buzz", class: "btn btn-warning" %>
+    <div class='row'>
+    <p class='col-xs-3 col-sm-3 col-lg-4'><%= customer.name %></p>
+    <p class='col-xs-3 col-sm-3 col-lg-4'> <%= customer.phone_number %></p>
+     <%= submit_tag "Buzz", class: "btn btn-warning col-xs-3 col-sm-5 col-lg-3 btn-buzz" %>
+     </div>
   <% end %>
 </div>

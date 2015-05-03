@@ -1,0 +1,29 @@
+.field{
+	text-align: center;
+}
+
+.actions{
+	text-align: center;
+}
+
+.forgot_signup{
+	text-align: center;
+}
+
+.forgot_signup a{
+	color: blue;
+}
+
+.login_background{
+	background-color: #18bc9c;
+	height: 510px;
+}
+
+.sign_up_form{
+	background-color: #18bc9c;
+	height: 510px;
+}
+
+.sign_up_form .actions{
+	margin-top: 10px;
+}

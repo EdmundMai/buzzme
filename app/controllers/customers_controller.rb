@@ -5,6 +5,7 @@ class CustomersController < ApplicationController
   def remove
     @customer = Customer.find(params[:customer_id])
     @customer.update_attributes(cancelled: true)
+    @current_amount_of_people_in_line = @client.customers_in_line.count
     respond_to do |format|
       format.html
       format.js
@@ -38,6 +39,7 @@ class CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     @customer.update_attributes(served: true, served_time: Time.now)
+    @current_amount_of_people_in_line = @client.customers_in_line.count
 
     @average_wait_time = Customer.average_wait_time
 

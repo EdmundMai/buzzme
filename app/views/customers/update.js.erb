@@ -1,2 +1,4 @@
 $(".customer-<%= @customer.id %>").remove();
 $(".average-wait-time").html("<i class='clock fa fa-clock-o'></i><%= @average_wait_time.to_i %>");
+$(".people-in-line").html("<i class='fa fa-users'></i><%= @current_amount_of_people_in_line %>")
+

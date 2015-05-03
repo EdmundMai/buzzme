@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   before_action :set_client
 
   def remove

@@ -71,3 +71,11 @@
   font-size: 0.5em !important;
   margin-right: 5px;
 }
+
+.fa-user-plus, .fa-phone {
+  width: 65px !important;
+}
+
+.timer {
+  margin: auto;
+}

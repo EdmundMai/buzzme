@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_client!
+  before_action :set_client
 
   def remove
     @customer = Customer.find(params[:customer_id])
@@ -46,10 +46,10 @@ class CustomersController < ApplicationController
     end
   end
   def create
-    current_amount_of_people_in_line = current_client.customers_in_line.count
+    current_amount_of_people_in_line = @client.customers_in_line.count
 
     @customer = Customer.new(customer_params)
-    @customer.client_id = current_client.id
+    @customer.client_id = @client.id
     @customer.save
 
     begin

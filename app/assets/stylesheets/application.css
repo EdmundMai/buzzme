@@ -30,9 +30,6 @@
   float: right;
   margin-right: 50px;
 }
-.btn-buzz:hover{
-  background-color: #18bc9c;
-}
 .new-phone-number-field , .new-name-field{
   width: 400px;
   height: 50px;
@@ -54,4 +51,18 @@
   font-size: 15em !important;
   color: #262626;
   margin-top: 30px;
+}
+.delete-entry-icon{
+  color: red;
+  font-size: 1.5em !important;
+}
+.timer{
+  background-color: grey;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%
+}
+.average-wait-time{
+  font-size: 5em;
+  color: white;
 }

@@ -47,7 +47,7 @@ class CustomersController < ApplicationController
     end
   end
   def create
-    current_amount_of_people_in_line = @client.customers_in_line.count
+    @current_amount_of_people_in_line = @client.customers_in_line.count
 
     @customer = Customer.new(customer_params)
     @customer.client_id = @client.id
@@ -58,7 +58,7 @@ class CustomersController < ApplicationController
       client.messages.create(
         from: '+15617392754',
         to: "+1#{@customer.phone_number}",
-        body: "You have been added to the line. There are #{current_amount_of_people_in_line} people ahead of you. You'll be buzzed 5 minutes before your turn."
+        body: "You have been added to the line. There are #{@current_amount_of_people_in_line} people ahead of you. You'll be buzzed 5 minutes before your turn."
       )
     rescue => e
       logger.info "Twilio error:"

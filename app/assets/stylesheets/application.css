@@ -63,7 +63,7 @@
   border-radius: 50%
 }
 .average-wait-time{
-  font-size: 3em;
+  font-size: 5em;
   color: white;
   margin-top: 20px;
 }
@@ -78,4 +78,14 @@
 
 .timer {
   margin: auto;
+}
+.list-form{
+  margin-top: 50px;
+}
+.sign_up_form{
+  padding-top: 80px;
+}
+.form-signup{
+  width: 600px;
+  margin: 0 auto;
 }

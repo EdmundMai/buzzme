@@ -1,6 +1,7 @@
-<h2>Log in</h2>
+<div class="sign_up_form">
+
 <div class="login_background">
-  
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -20,9 +21,11 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class:'btn btn-warning' %>
   </div>
 <% end %>
 
 <div class ="forgot_signup"><%= render "devise/shared/links" %></div>
+</div>
+
 </div>
